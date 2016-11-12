@@ -17,7 +17,7 @@
                BlueprintIdentifier = "F3AFAFA91DCFE823000759C8"
                BuildableName = "FillUp.app"
                BlueprintName = "FillUp"
-               ReferencedContainer = "container:FillUp.xcodeproj">
+               ReferencedContainer = "container:FillUP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "F3AFAFBD1DCFE823000759C8"
                BuildableName = "FillUpTests.xctest"
                BlueprintName = "FillUpTests"
-               ReferencedContainer = "container:FillUp.xcodeproj">
+               ReferencedContainer = "container:FillUP.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "F3AFAFC81DCFE823000759C8"
                BuildableName = "FillUpUITests.xctest"
                BlueprintName = "FillUpUITests"
-               ReferencedContainer = "container:FillUp.xcodeproj">
+               ReferencedContainer = "container:FillUP.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "F3AFAFA91DCFE823000759C8"
             BuildableName = "FillUp.app"
             BlueprintName = "FillUp"
-            ReferencedContainer = "container:FillUp.xcodeproj">
+            ReferencedContainer = "container:FillUP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "F3AFAFA91DCFE823000759C8"
             BuildableName = "FillUp.app"
             BlueprintName = "FillUp"
-            ReferencedContainer = "container:FillUp.xcodeproj">
+            ReferencedContainer = "container:FillUP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "F3AFAFA91DCFE823000759C8"
             BuildableName = "FillUp.app"
             BlueprintName = "FillUp"
-            ReferencedContainer = "container:FillUp.xcodeproj">
+            ReferencedContainer = "container:FillUP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
