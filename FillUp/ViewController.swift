@@ -44,8 +44,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         
         FillUpMapView.showsUserLocation = true
-        self.FillUpMapView.layer.borderWidth = 5
-        self.FillUpMapView.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).cgColor
+        //self.FillUpMapView.layer.borderWidth = 5
+        //self.FillUpMapView.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).cgColor
         
         
         // instantiating locationSearchTable
@@ -61,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         //Setting up the search bar
         let searchBar = resultSearchController.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Search for places"
+        searchBar.placeholder = "وسیله نقلیه شما کجاست؟"
         navigationItem.titleView = resultSearchController.searchBar
         
         
