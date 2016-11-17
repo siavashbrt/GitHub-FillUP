@@ -10,15 +10,57 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Use Firebase library to configure APIs [SIA]
         FIRApp.configure()
+
+        // Initialize sign-in [SIA]
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+    
+        
         return true
+        
+    }
+    
+    // [SIA] The method should call the handleURL method of the GIDSignIn instance, 
+    // which will properly handle the URL that your application receives at the end of the authentication process.
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url as URL!,
+                                                    sourceApplication: sourceApplication,
+                                                    annotation: annotation)
+    }
+    
+    // [SIA]
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+       
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        
+        let authentication = user.authentication
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
+                                                          accessToken: (authentication?.accessToken)!)
+        // ...
+        
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+
+        }
+    }
+    
+    // [SIA]
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user:GIDGoogleUser!,
+                withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
