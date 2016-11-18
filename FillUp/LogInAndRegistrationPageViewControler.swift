@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Firebase
-
-
 
 class LogInAndRegistrationViewController: UIViewController, GIDSignInUIDelegate {
     
@@ -17,27 +14,19 @@ class LogInAndRegistrationViewController: UIViewController, GIDSignInUIDelegate 
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var enterButton: GIDSignInButton!
  
-
-    @IBAction func SignOutWasPressed(_ sender: UIButton) {
-        GIDSignIn.sharedInstance().signOut()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //set the UI delegate of the GIDSignIn
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
-        //GIDSignIn.sharedInstance().signInSilently()
-        
-        // TODO(developer) Configure the sign-in button look/feel
-        // ...
 
         registerButton.layer.borderWidth = 2
         registerButton.layer.borderColor = UIColor.orange.cgColor
 
     }
     
+    @IBAction func GoToLogInPage(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "LogInPageSegue", sender: self)
+
+    }
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

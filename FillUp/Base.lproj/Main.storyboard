@@ -157,6 +157,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="GoToLogInPage:" destination="di0-hr-gU9" eventType="touchUpInside" id="HKl-ca-NbC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R31-VN-2uk">
                                 <rect key="frame" x="214" y="583" width="145" height="54"/>
@@ -171,30 +174,63 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xyh-Cb-4V4" customClass="GIDSignInButton">
-                                <rect key="frame" x="16" y="514" width="343" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7R-tG-c9w">
-                                <rect key="frame" x="145" y="579" width="102" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sing out"/>
-                                <connections>
-                                    <action selector="SignOutWasPressed:" destination="di0-hr-gU9" eventType="touchUpInside" id="ULx-bm-iSH"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="enterButton" destination="zeV-VP-hem" id="eIa-rx-xyQ"/>
                         <outlet property="registerButton" destination="R31-VN-2uk" id="F3d-S5-7gC"/>
+                        <segue destination="6AD-ma-VuN" kind="show" identifier="LogInPageSegue" id="fao-W2-Lmw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="New-Zq-Pee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4474.3999999999996" y="380.95952023988008"/>
+        </scene>
+        <!--Log In View Controler-->
+        <scene sceneID="FPb-Ad-Had">
+            <objects>
+                <viewController id="6AD-ma-VuN" customClass="LogInViewControler" customModule="FillUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tfF-Sl-usM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ool-yF-q9e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ESd-yZ-2jc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xyh-Cb-4V4" customClass="GIDSignInButton">
+                                <rect key="frame" x="16" y="87" width="343" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-ls-Mm9">
+                                <rect key="frame" x="16" y="581" width="105" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SignOut"/>
+                                <connections>
+                                    <action selector="SignOutWasPressed:" destination="6AD-ma-VuN" eventType="touchUpInside" id="dS7-go-daN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu3-8R-xv0">
+                                <rect key="frame" x="278" y="28" width="81" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="DismissLogInViewControler:" destination="6AD-ma-VuN" eventType="touchUpInside" id="heY-GM-mc0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="GoogleSignInButton" destination="Xyh-Cb-4V4" id="SEb-Qx-MFP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYU-k9-nGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5288.8000000000002" y="380.95952023988008"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G4b-Lf-9Ir">
