@@ -15,8 +15,16 @@ protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDelegate {
 
+    @IBAction func SignOutWasPressed(_ sender: UIButton) {
+       
+        GIDSignIn.sharedInstance().signOut()
+        
+        self.performSegue(withIdentifier: "MinPageToEntryPoint", sender: self)
+
+    }
+    
     var locationManager:CLLocationManager!
     
     //var resultSearchController:UISearchController! = nil
@@ -25,6 +33,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //Map pin
     var selectedPin:MKPlacemark? = nil
     
+   
     @IBOutlet weak var FillUpMapView: MKMapView!
     
     //Search controler

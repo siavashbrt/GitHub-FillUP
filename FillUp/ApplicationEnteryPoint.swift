@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogInAndRegistrationViewController: UIViewController, GIDSignInUIDelegate {
+class ApplicationEnteryPointViewControler: UIViewController, GIDSignInUIDelegate {
     
     
     @IBOutlet weak var registerButton: UIButton!
@@ -17,7 +17,18 @@ class LogInAndRegistrationViewController: UIViewController, GIDSignInUIDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
+        //set the UI delegate of the GIDSignIn
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        GIDSignIn.sharedInstance().signInSilently()
 
+        // If user is already signed in go to the main page
+        if (GIDSignIn.sharedInstance().currentUser) != nil{
+            self.performSegue(withIdentifier: "MainPageSegue", sender: self)
+        }
+         */
         registerButton.layer.borderWidth = 2
         registerButton.layer.borderColor = UIColor.orange.cgColor
 

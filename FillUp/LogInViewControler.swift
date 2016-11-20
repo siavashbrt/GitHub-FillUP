@@ -11,14 +11,19 @@ import Firebase
 
 class LogInViewControler: UIViewController, GIDSignInUIDelegate {
 
-        @IBAction func SignOutWasPressed(_ sender: UIButton) {
-            GIDSignIn.sharedInstance().signOut()
+    @IBAction func SignOutWasPressed(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().signOut()
     }
     
-        @IBAction func DismissLogInViewControler(_ sender: UIButton) {
-            self.dismiss(animated: true, completion: nil)
-            
+    @IBAction func DismissLogInViewControler(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    func GoToMainPage()
+    {
+        self.performSegue(withIdentifier: "MainPageSegue", sender: self)
+    }
+    
     @IBOutlet weak var GoogleSignInButton: GIDSignInButton!
     
         override func viewDidLoad() {
@@ -33,6 +38,8 @@ class LogInViewControler: UIViewController, GIDSignInUIDelegate {
             
             // TODO(developer) Configure the sign-in button look/feel
             // ...
+            
+            (UIApplication.shared.delegate as! AppDelegate).signInCallBack = GoToMainPage
             
     }
         

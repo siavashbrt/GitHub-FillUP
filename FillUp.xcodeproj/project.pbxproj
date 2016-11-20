@@ -16,7 +16,7 @@
 		F31F0B001DDC384D00DE6AA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F31F0AFE1DDC37C400DE6AA0 /* GoogleService-Info.plist */; };
 		F31F0B011DDC384E00DE6AA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F31F0AFE1DDC37C400DE6AA0 /* GoogleService-Info.plist */; };
 		F33062E71DDAEB08002CD1A6 /* petrol-mainpage.png in Resources */ = {isa = PBXBuildFile; fileRef = F33062E61DDAEB08002CD1A6 /* petrol-mainpage.png */; };
-		F33062E91DDAF4DF002CD1A6 /* LogInAndRegistrationPageViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33062E81DDAF4DF002CD1A6 /* LogInAndRegistrationPageViewControler.swift */; };
+		F33062E91DDAF4DF002CD1A6 /* ApplicationEnteryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33062E81DDAF4DF002CD1A6 /* ApplicationEnteryPoint.swift */; };
 		F37A98CE1DD1AB5300E88054 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37A98CD1DD1AB5300E88054 /* MapKit.framework */; };
 		F3AFAFAE1DCFE823000759C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AFAFAD1DCFE823000759C8 /* AppDelegate.swift */; };
 		F3AFAFB01DCFE823000759C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AFAFAF1DCFE823000759C8 /* ViewController.swift */; };
@@ -59,7 +59,7 @@
 		F314F4B31DD7C62E005EF496 /* search-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-icon.png"; sourceTree = "<group>"; };
 		F31F0AFE1DDC37C400DE6AA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F33062E61DDAEB08002CD1A6 /* petrol-mainpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "petrol-mainpage.png"; sourceTree = "<group>"; };
-		F33062E81DDAF4DF002CD1A6 /* LogInAndRegistrationPageViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInAndRegistrationPageViewControler.swift; sourceTree = "<group>"; };
+		F33062E81DDAF4DF002CD1A6 /* ApplicationEnteryPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationEnteryPoint.swift; sourceTree = "<group>"; };
 		F37A98CD1DD1AB5300E88054 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F37A98D11DD1AB6B00E88054 /* FillUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FillUp.entitlements; sourceTree = "<group>"; };
 		F3AFAFAA1DCFE823000759C8 /* FillUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FillUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +172,7 @@
 				F37A98D11DD1AB6B00E88054 /* FillUp.entitlements */,
 				F3AFAFB11DCFE823000759C8 /* Main.storyboard */,
 				F3B2B61F1DD45DEA00EABAF2 /* LocationSearchTable.swift */,
-				F33062E81DDAF4DF002CD1A6 /* LogInAndRegistrationPageViewControler.swift */,
+				F33062E81DDAF4DF002CD1A6 /* ApplicationEnteryPoint.swift */,
 				F3AFAFAF1DCFE823000759C8 /* ViewController.swift */,
 				F3EB30351DDEDAF1008FD00A /* LogInViewControler.swift */,
 				F3AFAFDB1DCFE830000759C8 /* Supporting Files */,
@@ -512,7 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3B2B6201DD45DEA00EABAF2 /* LocationSearchTable.swift in Sources */,
-				F33062E91DDAF4DF002CD1A6 /* LogInAndRegistrationPageViewControler.swift in Sources */,
+				F33062E91DDAF4DF002CD1A6 /* ApplicationEnteryPoint.swift in Sources */,
 				F3AFAFB01DCFE823000759C8 /* ViewController.swift in Sources */,
 				F3AFAFAE1DCFE823000759C8 /* AppDelegate.swift in Sources */,
 				F3EB30361DDEDAF1008FD00A /* LogInViewControler.swift in Sources */,
