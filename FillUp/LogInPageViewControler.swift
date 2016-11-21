@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LogInViewControler: UIViewController, GIDSignInUIDelegate {
+class LogInPageViewControler: UIViewController, GIDSignInUIDelegate {
 
     @IBAction func SignOutWasPressed(_ sender: UIButton) {
         GIDSignIn.sharedInstance().signOut()
@@ -19,7 +19,7 @@ class LogInViewControler: UIViewController, GIDSignInUIDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func GoToMainPage()
+    func GoToMainPageFromLoginPage()
     {
         self.performSegue(withIdentifier: "MainPageSegue", sender: self)
     }
@@ -34,12 +34,12 @@ class LogInViewControler: UIViewController, GIDSignInUIDelegate {
             //set the UI delegate of the GIDSignIn
             GIDSignIn.sharedInstance().uiDelegate = self
             
-            //GIDSignIn.sharedInstance().signInSilently()
+            GIDSignIn.sharedInstance().signInSilently()
             
             // TODO(developer) Configure the sign-in button look/feel
             // ...
             
-            (UIApplication.shared.delegate as! AppDelegate).signInCallBack = GoToMainPage
+            (UIApplication.shared.delegate as! AppDelegate).signInCallBack = GoToMainPageFromLoginPage
             
     }
         

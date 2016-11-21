@@ -8,7 +8,8 @@ target 'FillUp' do
   # Pods for FillUp
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-pod 'GoogleSignIn'
+pod 'Google/SignIn'
+
 
   target 'FillUpTests' do
     inherit! :search_paths

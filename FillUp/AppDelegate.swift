@@ -21,11 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Use Firebase library to configure APIs [SIA]
         FIRApp.configure()
 
-        // Initialize sign-in [SIA]
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-    
+        // Conftigure Google Services
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        if(configureError != nil)
+        {
+            print("Error configuring Google services: \(configureError)")
+
+        }
         
+        // Initialize sign-in [SIA]
+        GIDSignIn.sharedInstance().delegate = self
+        //GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+    
         return true
         
     }
@@ -41,18 +49,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // [SIA]
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
        
-        if let error = error {
-            print(error.localizedDescription)
-            return
+        if(error != nil)
+        {
+            print("Looks like we got a sign-in error: \(error.localizedDescription)")
         }
-        
-        let authentication = user.authentication
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
-                                                          accessToken: (authentication?.accessToken)!)
-        // ...
-        signInCallBack!()
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-            
+        else
+        {
+            print("We are signed in! \(user)")
+            /*
+            let authentication = user.authentication
+            let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
+                                                              accessToken: (authentication?.accessToken)!)
+            FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            }*/
+            signInCallBack!()
+
         }
     }
     
