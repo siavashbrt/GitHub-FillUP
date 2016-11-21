@@ -10,10 +10,6 @@ import UIKit
 import Firebase
 
 class LogInPageViewControler: UIViewController, GIDSignInUIDelegate {
-
-    @IBAction func SignOutWasPressed(_ sender: UIButton) {
-        GIDSignIn.sharedInstance().signOut()
-    }
     
     @IBAction func DismissLogInViewControler(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -21,25 +17,25 @@ class LogInPageViewControler: UIViewController, GIDSignInUIDelegate {
     
     func GoToMainPageFromLoginPage()
     {
+        let isMain = Thread.isMainThread // is going to be false in the PF completion handler
+        if(isMain)
+        {
         self.performSegue(withIdentifier: "MainPageSegue", sender: self)
+        }
     }
     
     @IBOutlet weak var GoogleSignInButton: GIDSignInButton!
     
         override func viewDidLoad() {
             super.viewDidLoad()
-        
+            
+            (UIApplication.shared.delegate as! AppDelegate).signInCallBack = GoToMainPageFromLoginPage
+
             GoogleSignInButton.style =  GIDSignInButtonStyle.wide
             
             //set the UI delegate of the GIDSignIn
             GIDSignIn.sharedInstance().uiDelegate = self
-            
-            GIDSignIn.sharedInstance().signInSilently()
-            
-            // TODO(developer) Configure the sign-in button look/feel
-            // ...
-            
-            (UIApplication.shared.delegate as! AppDelegate).signInCallBack = GoToMainPageFromLoginPage
+                    
             
     }
         

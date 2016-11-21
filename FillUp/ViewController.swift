@@ -21,6 +21,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GIDSignInUIDe
        
         GIDSignIn.sharedInstance().signOut()
         
+        //Hide back navigation button to prevent going back on sign out from Main page
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         self.performSegue(withIdentifier: "MinPageToEntryPoint", sender: self)
 
     }

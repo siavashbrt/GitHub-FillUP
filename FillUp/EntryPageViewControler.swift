@@ -22,6 +22,7 @@ class EntryPageViewControler: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         //set the UI delegate of the GIDSignIn
         GIDSignIn.sharedInstance().uiDelegate = self
         
